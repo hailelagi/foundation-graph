@@ -8,7 +8,13 @@ defmodule Fnd.Application do
       FndWeb.Telemetry,
       {Phoenix.PubSub, name: Fnd.PubSub},
       FndWeb.Endpoint,
-      Fnd.Cache
+      Fnd.Cache,
+      {Finch,
+       name: FndFinch,
+       pools: %{
+         :default => [size: 10],
+         "https://ipfs.io" => [size: 32, count: 8]
+       }}
     ]
 
     opts = [strategy: :one_for_one, name: Fnd.Supervisor]
