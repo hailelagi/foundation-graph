@@ -6,6 +6,10 @@ defmodule Fnd.Repo.Migrations.CreateNfts do
       add :id, :binary_id, primary_key: true
       add :graph_id, :string
       add :ipfs, :string
+      add :name, :string
+      add :description, :string
+      add :content_url, :string
+      add :type, :string
       add :create_date, :date
 
       timestamps()

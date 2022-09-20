@@ -31,3 +31,5 @@ config :fnd,
   sub_graph: "test-graph",
   key: nil,
   client_api: Fnd.Graph.ClientMock
+
+config :fnd, Oban, testing: :inline
