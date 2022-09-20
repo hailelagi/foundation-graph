@@ -25,3 +25,9 @@ config :logger, level: :warn
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :fnd,
+  graphql_endpoint: "https://gateway.thegraph.com/api/",
+  sub_graph: "test-graph",
+  key: nil,
+  client_api: Fnd.Graph.ClientMock
