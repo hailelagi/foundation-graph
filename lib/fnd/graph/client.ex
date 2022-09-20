@@ -11,7 +11,7 @@ defmodule Fnd.Graph.Client do
 
     Neuron.query(
       """
-      {
+      query getNfs($count: Int) {
         nfts(first: $count) {
           id
           dateMinted
