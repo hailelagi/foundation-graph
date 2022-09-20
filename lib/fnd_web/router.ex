@@ -22,6 +22,8 @@ defmodule FndWeb.Router do
 
   scope "/api", FndWeb do
     pipe_through :api
+
+    get "/", GraphController, :index
   end
 
   if Mix.env() in [:dev, :test] do

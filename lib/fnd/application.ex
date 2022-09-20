@@ -7,7 +7,8 @@ defmodule Fnd.Application do
       Fnd.Repo,
       FndWeb.Telemetry,
       {Phoenix.PubSub, name: Fnd.PubSub},
-      FndWeb.Endpoint
+      FndWeb.Endpoint,
+      Fnd.Cache
     ]
 
     opts = [strategy: :one_for_one, name: Fnd.Supervisor]
