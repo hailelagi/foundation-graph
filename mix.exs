@@ -42,6 +42,7 @@ defmodule Fnd.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:neuron, "~> 5.0.0"},
+      {:oban, "~> 2.13"},
       # compile time audit for security vulns
       {:sobelow, "~> 0.8", only: :dev}
     ]

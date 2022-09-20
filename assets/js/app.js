@@ -1,7 +1,7 @@
 import "../css/app.css"
 import "phoenix_html"
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 
 // Establish Phoenix Socket and LiveView configuration.
@@ -26,9 +26,7 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// React 18
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<App tab="home" />);
