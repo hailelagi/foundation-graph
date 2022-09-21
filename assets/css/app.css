@@ -1,6 +1,23 @@
 /* This file is for your main application CSS */
 @import "./phoenix.css";
 
+h1 {
+  text-align: center;
+  padding: 1em;
+}
+
+button {
+  margin: 15px;
+}
+
+h3 {
+  text-align: center;
+
+}
+
+p {
+  text-align: center;
+}
 /* Alerts and form errors used by phx.new */
 .alert {
   padding: 15px;

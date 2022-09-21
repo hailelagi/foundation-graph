@@ -19,7 +19,10 @@ export default function App(_params) {
                 setCurrentAcc(accounts[0])
 
                 const provider = new ethers.providers.Web3Provider(ethereum);
-                /* const signer = provider.getSigner(); */
+                const signer = provider.getSigner();
+                signer.getAddress()
+
+                console.log(signer._address)
 
                 const network = await provider.getNetwork(ethereum.network);
                 setNet(network.name)
@@ -40,19 +43,31 @@ export default function App(_params) {
         checkConnection();
     })
 
+    let status;
+    let displayButton;
+
+    if (currentAcc) {
+        status = <h3> you are {currentAcc} on <b>{net}</b></h3>
+        displayButton = false;
+    } else {
+        status = <h3> please sign in with metamask to view nfts! </h3>
+        displayButton = true;
+    }
+
     return (
         <>
-            <h1> it renders</h1>
-            <h2>{err}</h2>
-            <button className="waveButton" onClick={connectWallet}>
-            connect wallet
-            </button>
+            <h1> <a href="https://www.foundation.app"> Foundation.app</a> subGraph
+                {
+                    displayButton && <button className="waveButton" onClick={connectWallet}>
+                        connect wallet
+                    </button>
+                }
+            </h1>
+            {status}
 
-            <h3> you are {currentAcc} </h3>
-            <h3> on {net} </h3>
-
-            <CardWrapper />
+            {currentAcc && net && <CardWrapper />}
         </>
 
     )
 }
+
