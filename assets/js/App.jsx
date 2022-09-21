@@ -3,6 +3,8 @@ import { ethers } from "ethers";
 import { checkConnection } from "./auth";
 const { ethereum } = window;
 
+import CardWrapper from "./components/cardWrapper";
+
 export default function App(_params) {
     const [currentAcc, setCurrentAcc] = useState("");
     const [net, setNet] = useState("");
@@ -48,6 +50,8 @@ export default function App(_params) {
 
             <h3> you are {currentAcc} </h3>
             <h3> on {net} </h3>
+
+            <CardWrapper />
         </>
 
     )
