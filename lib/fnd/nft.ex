@@ -9,7 +9,6 @@ defmodule Fnd.Nft do
     field :name, :string
     field :description, :string
     field :content_url, :string
-    field :type, :string
     field :create_date, :date
     field :graph_id, :string
     field :ipfs, :string
@@ -20,7 +19,7 @@ defmodule Fnd.Nft do
   @doc false
   def changeset(nft, attrs) do
     nft
-    |> cast(attrs, [:name, :description, :content_url, :type, :graph_id, :ipfs, :create_date])
-    |> validate_required([:name, :description, :content_url, :type, :graph_id, :ipfs, :create_date])
+    |> cast(attrs, [:name, :description, :content_url, :graph_id, :ipfs, :create_date])
+    |> validate_required([:graph_id, :ipfs, :create_date])
   end
 end

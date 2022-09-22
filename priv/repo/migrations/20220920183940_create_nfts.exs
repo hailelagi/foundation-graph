@@ -9,7 +9,6 @@ defmodule Fnd.Repo.Migrations.CreateNfts do
       add :name, :string
       add :description, :string
       add :content_url, :string
-      add :type, :string
       add :create_date, :date
 
       timestamps()
