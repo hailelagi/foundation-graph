@@ -7,7 +7,7 @@ defmodule Fnd.Repo.Migrations.CreateNfts do
       add :graph_id, :string
       add :ipfs, :string
       add :name, :string
-      add :description, :string
+      add :description, :text
       add :content_url, :string
       add :create_date, :date
 
