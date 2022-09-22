@@ -1,4 +1,4 @@
-defmodule Fnd.Cache do
+defmodule Fnd.Worker.Cache do
   @moduledoc """
     Cache and Periodically query the graph api
   """
@@ -60,6 +60,6 @@ defmodule Fnd.Cache do
 
   defp warm_cache(t) do
     # warm cache exponentally
-    Process.send_after(self(), :warm, t * 60 * 1000)
+    Process.send_after(self(), :warm, t * 60 * 1000000)
   end
 end

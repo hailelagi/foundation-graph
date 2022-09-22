@@ -8,7 +8,8 @@ defmodule Fnd.Application do
       FndWeb.Telemetry,
       {Phoenix.PubSub, name: Fnd.PubSub},
       FndWeb.Endpoint,
-      Fnd.Cache,
+      Fnd.Worker.Cache,
+      Fnd.Worker.Resolver,
       {Finch,
        name: FndFinch,
        pools: %{
