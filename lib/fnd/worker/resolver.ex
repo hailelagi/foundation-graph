@@ -24,12 +24,9 @@ defmodule Fnd.Worker.Resolver do
         :ok
 
       nfts ->
-        Logger.info("ipfs resolution started..")
-
         Stream.map(nfts, fn nft ->
           case Ipfs.resolve(nft.ipfs) do
             {:ok, data} ->
-              Logger.info(data["description"])
               changeset =
                 Nft.changeset(nft, %{
                   name: data["name"],
@@ -46,7 +43,7 @@ defmodule Fnd.Worker.Resolver do
     {:noreply, :ok}
   end
 
-  defp schedule, do: Process.send_after(self(), :resolve, 1000)
+  defp schedule, do: Process.send_after(self(), :resolve, 3 * 60 * 1000)
 
   def unresolved do
     query =

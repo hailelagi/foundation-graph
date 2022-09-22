@@ -15,8 +15,7 @@ defmodule Fnd.Application do
        pools: %{
          :default => [size: 10],
          "https://ipfs.io" => [size: 32, count: 8]
-       }},
-      {Oban, Application.fetch_env!(:fnd, Oban)}
+       }}
     ]
 
     opts = [strategy: :one_for_one, name: Fnd.Supervisor]

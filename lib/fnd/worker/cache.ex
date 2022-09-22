@@ -8,7 +8,6 @@ defmodule Fnd.Worker.Cache do
   require Logger
 
   @impl true
-  @spec init(any) :: {:ok, 1}
   def init(_) do
     Logger.info("theGraph cache started..")
     warm_cache(1)
@@ -60,6 +59,6 @@ defmodule Fnd.Worker.Cache do
 
   defp warm_cache(t) do
     # warm cache exponentally
-    Process.send_after(self(), :warm, t * 60 * 1000000)
+    Process.send_after(self(), :warm, t * 60 * 1000)
   end
 end
