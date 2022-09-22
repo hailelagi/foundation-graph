@@ -50,7 +50,7 @@ defmodule Fnd.Worker.Cache do
           end
         end)
 
-        {:reply, :ok, t}
+        {:reply, :ok, nfts}
     end
 
     warm_cache(t ** 2)
