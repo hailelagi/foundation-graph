@@ -4,10 +4,6 @@ defmodule Fnd.Ipfs do
   """
   require Logger
 
-  # def refresh(nfts) do
-  #   Stream.map(nfts, fn nft -> resolve_ipfs(nft.) )
-  # end
-
   def resolve(hash, long_poll \\ 5)
 
   def resolve(hash, long_poll) when long_poll > 0 do
@@ -33,7 +29,6 @@ defmodule Fnd.Ipfs do
   end
 
   def resolve(_, _) do
-    # schedule ipfs hash with oban
     {:error, :polling_limit}
   end
 end

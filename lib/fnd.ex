@@ -1,11 +1,8 @@
 defmodule Fnd do
   @moduledoc """
-  Fnd keeps the contexts that define your domain
-  and business logic.
-
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
+    Foundation graph context.
   """
+
   alias Fnd.{Nft, Repo}
   import Ecto.Query
 
