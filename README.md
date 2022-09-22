@@ -10,7 +10,7 @@ The core operations are performed by two `GenServer`'s in `fnd/worker`, a cache 
 
 The period chosen is arbitrary, the cache warms exponentially every few minutes, not to drain the GRT balance on the graph too quickly and the resolver linearly every three minutes.
 
-It is then fetched from the database every 10 second and resolved via ipfs to display an image.
+It is then fetched by the client web app, from the database every 10 seconds and displays the media.
 
 ## caveats/limitations
 
