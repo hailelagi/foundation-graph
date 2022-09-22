@@ -14,13 +14,15 @@ It is then fetched by the client web app, from the database every 10 seconds and
 
 ## caveats/limitations
 
-- rate limiting via client ip address and wallet address, The Graph queries cost a pretty penny!
+- no rate limiting for client wallet address, The Graph queries cost a pretty penny!
 
 - resolution of an ipfs hash can take a really long time and create a large http worker pool, this was adjusted slightly but can be improved.
 
 - stronger authentication guarantees on the wallet signer, possibly by requirng the user sign data with a timestamp or reference
 
 - barebones minimal client ui
+
+- improved test coverage via client mocks
 
 ## Installation
 
