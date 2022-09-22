@@ -31,7 +31,7 @@ export default function CardWrapper(props) {
         fetchNfts(props.data);
         const interval = setInterval(() => {
             fetchNfts(props.data)
-        }, 60000);
+        }, 10000);
 
         return () => clearInterval(interval)
     }, [])
