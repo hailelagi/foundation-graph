@@ -28,7 +28,7 @@ It is then fetched by the client web app, from the database every 10 seconds and
 
 ## Installation
 
-Even without adding a key, a few sample images have been seeded to the database to allow viewing.
+Even without adding a key, a few sample nfts have been seeded to the database to allow viewing.
 In`config/dev.exs` or `config/config.exs`:
 
 ```
