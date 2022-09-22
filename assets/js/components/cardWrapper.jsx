@@ -11,7 +11,7 @@ export default function CardWrapper(props) {
             .then((res) => {
                 if (res.status == 429) {
                     setErr("Rate Limited.")
-                    return 
+                    return
 
                 } else if (res.status == 404) {
                     setErr("Nfts not found")
@@ -37,7 +37,7 @@ export default function CardWrapper(props) {
     }, [])
 
     if (nfts) {
-        display = <CardWrap> {nfts.map(nft => <Card data={nft} key={nft.ipfs} />)} </CardWrap>
+        display = <CardWrap> {nfts.map(nft => <Card data={nft} key={nft.graph_id} />)} </CardWrap>
     } else if (err !== "") {
         display = <p id="error">{err}</p>
     } else {

@@ -5,7 +5,7 @@ defmodule Fnd.Nft do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  @derive {Jason.Encoder, only: [:name, :description, :content_url, :create_date]}
+  @derive {Jason.Encoder, only: [:name, :description, :content_url, :create_date, :graph_id]}
 
   schema "nfts" do
     field :name, :string

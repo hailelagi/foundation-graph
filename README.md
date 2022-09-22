@@ -24,7 +24,8 @@ It is then fetched from the database every 10 second and resolved via ipfs to di
 
 ## Installation
 
-add to `config/dev.exs` or `config/config.exs`:
+Even without adding a key, a few sample images have been seeded to the database to allow viewing.
+In`config/dev.exs` or `config/config.exs`:
 
 ```
 config :fnd,
@@ -41,5 +42,5 @@ run `npm install react react-dom styled-components --save`
 Finally, in the root to install dependencies:
 
 - `mix deps.get`
-- mix ecto.setup
-Start Phoenix endpoint with mix phx.server or inside IEx with iex -S mix phx.server
+- `mix ecto.setup`
+- Start Phoenix endpoint with mix `phx.server` or inside `IEx` with `iex -S mix phx.server`
