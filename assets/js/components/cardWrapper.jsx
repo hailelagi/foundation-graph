@@ -14,7 +14,7 @@ export default function CardWrapper(props) {
                     return 
 
                 } else if (res.status == 404) {
-                    setErr("Nft not found")
+                    setErr("Nfts not found")
                     return
                 }
 
