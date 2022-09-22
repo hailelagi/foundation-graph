@@ -2,6 +2,8 @@
 
 View NFTs from the Foundation.app marketplace via The Graph.
 
+    ![Fnd app screenshot](/fnd_screen.png)
+
 ## Architecture
 
 Fnd is phoenix server with a react.js frontend.
