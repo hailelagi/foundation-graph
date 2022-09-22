@@ -15,6 +15,10 @@ h3 {
 
 }
 
+#error {
+  color: red;
+  font-size: 200%;
+}
 p {
   text-align: center;
 }

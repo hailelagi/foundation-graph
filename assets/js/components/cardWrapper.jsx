@@ -2,43 +2,46 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Card from "./card";
 
-/* 
-
-  schema "nfts" do
-    field :name, :string
-    field :description, :string
-    field :content_url, :string
-    field :type, :string
-    field :create_date, :date
-    field :graph_id, :string
-    field :ipfs, :string
-
-    timestamps()
-  end
-*/
 export default function CardWrapper(props) {
     const [nfts, setNfts] = useState(null);
+    const [err, setErr] = useState("");
 
-    async function fetchNfts() {
-        await fetch("/api/nfts")
-            .then((res) => res.json())
+    async function fetchNfts(userAddress) {
+        await fetch("./api/nfts?user=" + userAddress)
+            .then((res) => {
+                if (res.status == 429) {
+                    setErr("Rate Limited.")
+                    return 
+
+                } else if (res.status == 404) {
+                    setErr("Nft not found")
+                    return
+                }
+
+                return res.json()
+            })
             .then((nfts) => { setNfts(nfts) })
             .catch((err) => {
-                console.log(err)
+                console.log(err.reason)
+                console.error(err)
             })
     }
 
     useEffect(() => {
-        fetchNfts();
-    })
+        fetchNfts(props.data);
+        const interval = setInterval(() => {
+            fetchNfts(props.data)
+        }, 60000);
 
-    let display; 
-    
-    if (!nfts) {
-        display = <p> Please wait... getting nfts</p>
-    } else {
+        return () => clearInterval(interval)
+    }, [])
+
+    if (nfts) {
         display = <CardWrap> {nfts.map(nft => <Card data={nft} key={nft.ipfs} />)} </CardWrap>
-
+    } else if (err !== "") {
+        display = <p id="error">{err}</p>
+    } else {
+        display = <p> Please wait... getting nfts </p>
     }
 
     return (<>{display}</>);

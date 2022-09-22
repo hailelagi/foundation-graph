@@ -65,7 +65,7 @@ export default function App(_params) {
             </h1>
             {status}
 
-            {currentAcc && net && <CardWrapper />}
+            {currentAcc && net && <CardWrapper data={currentAcc} />}
         </>
 
     )
