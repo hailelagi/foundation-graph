@@ -36,6 +36,8 @@ export default function CardWrapper(props) {
         return () => clearInterval(interval)
     }, [])
 
+    let display;
+    
     if (nfts) {
         display = <CardWrap> {nfts.map(nft => <Card data={nft} key={nft.graph_id} />)} </CardWrap>
     } else if (err !== "") {
