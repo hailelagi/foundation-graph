@@ -34,7 +34,10 @@ defmodule Fnd.Worker.Resolver do
                   content_url: data["image"] || data["video"]
                 })
 
-              Repo.update!(changeset)
+              Repo.update(changeset)
+
+            {:error, err} ->
+              Logger.error(err)
           end
         end)
         |> Enum.take(20)
