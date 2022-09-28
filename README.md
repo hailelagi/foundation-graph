@@ -2,7 +2,7 @@
 
 View NFTs from the Foundation.app marketplace via The Graph.
 
-![Fnd app screenshot](./fnd_screen.png)
+![Fnd app screenshot](./screenshot.png)
 
 ## Architecture
 
