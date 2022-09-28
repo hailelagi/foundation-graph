@@ -23,5 +23,6 @@ defmodule Fnd.Nft do
     nft
     |> cast(attrs, [:name, :description, :content_url, :graph_id, :ipfs, :create_date])
     |> validate_required([:graph_id, :ipfs, :create_date])
+    |> unique_constraint([:graph_id, :ipfs], name: :graph_index)
   end
 end
