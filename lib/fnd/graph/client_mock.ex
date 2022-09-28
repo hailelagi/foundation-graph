@@ -8,26 +8,6 @@ defmodule Fnd.Graph.ClientMock do
          "tokenIPFSPath" => "QmbknnBAkvMXWic6u7cPUb9Pq5NhGJhkF442npUKkzP45z/metadata.json"
        },
        %{
-         "dateMinted" => "1645691898",
-         "id" => "0x000366fd8b5a6d3acdbb46b286e56c7396c51daa-1",
-         "tokenIPFSPath" => "QmfN6wzr51yVq3kGEACG6oBHA24rC1E1YqmBmTERmjvyKD/metadata.json"
-       },
-       %{
-         "dateMinted" => "1645693101",
-         "id" => "0x000366fd8b5a6d3acdbb46b286e56c7396c51daa-2",
-         "tokenIPFSPath" => "QmTLFoqtxMP14iCFnpUU7wop8Ujiag1wNTN3CqxxYmuLYg/metadata.json"
-       },
-       %{
-         "dateMinted" => "1650745806",
-         "id" => "0x00047d0d2a0afad9aedc5e840533df8336f85e4e-1",
-         "tokenIPFSPath" => "QmP6EBLxNCwVWE7vmmGaPbrwQGGWRsPKzjGYMh8NaL5Wtn/metadata.json"
-       },
-       %{
-         "dateMinted" => "1650848293",
-         "id" => "0x00047d0d2a0afad9aedc5e840533df8336f85e4e-2",
-         "tokenIPFSPath" => "QmRsFaYhKZzKa9WxN87WXjhnXB6mKvENxnidYRi1Me5a8S/metadata.json"
-       },
-       %{
          "dateMinted" => "1652527298",
          "id" => "0x00047d0d2a0afad9aedc5e840533df8336f85e4e-3",
          "tokenIPFSPath" => "QmP1a9ZNs2gpwN6diJiPtQKVQ5owVrkDwqjh4ugThKLnMp/metadata.json"

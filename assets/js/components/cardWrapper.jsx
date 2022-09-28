@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Card from "./card";
 
 export default function CardWrapper(props) {
-    const [nfts, setNfts] = useState(null);
+    const [nfts, setNfts] = useState([]);
     const [err, setErr] = useState("");
 
     async function fetchNfts(userAddress) {
@@ -37,8 +37,8 @@ export default function CardWrapper(props) {
     }, [])
 
     let display;
-    
-    if (nfts) {
+
+    if (nfts.length > 0) {
         display = <CardWrap> {nfts.map(nft => <Card data={nft} key={nft.graph_id} />)} </CardWrap>
     } else if (err !== "") {
         display = <p id="error">{err}</p>

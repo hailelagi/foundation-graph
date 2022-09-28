@@ -46,7 +46,7 @@ defmodule Fnd.Worker.Resolver do
     {:noreply, :ok}
   end
 
-  defp schedule, do: Process.send_after(self(), :resolve, 3 * 60 * 1000)
+  defp schedule, do: Process.send_after(self(), :resolve, 60 * 1000)
 
   def unresolved do
     query =
