@@ -13,5 +13,7 @@ defmodule Fnd.Repo.Migrations.CreateNfts do
 
       timestamps()
     end
+
+    create unique_index(:nfts, [:graph_id, :ipfs], name: :graph_index)
   end
 end
