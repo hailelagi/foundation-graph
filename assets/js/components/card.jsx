@@ -10,7 +10,7 @@ export default function Card(props) {
 
     let displayMedia;
     if (ext == "jpg" | ext == "png" | ext == "gif") {
-        displayMedia = <img src={media} />
+        displayMedia = <img height="250" src={media} />
     } else {
         displayMedia = <video width="250px" height="250px" controls><source src={media} type="video/ogg"></source></video>
     }

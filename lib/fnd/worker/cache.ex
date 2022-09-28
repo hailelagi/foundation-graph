@@ -21,7 +21,7 @@ defmodule Fnd.Worker.Cache do
   def handle_info(:warm, t) do
     Logger.info("cache is querying the graph time - #{t}")
 
-    case Graph.query_nfts(20) do
+    case Graph.query_nfts(100) do
       {:ok, nfts} ->
         Stream.map(nfts, fn nft ->
           date = String.to_integer(nft["dateMinted"])
