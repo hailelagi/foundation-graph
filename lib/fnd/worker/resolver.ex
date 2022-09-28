@@ -1,6 +1,6 @@
 defmodule Fnd.Worker.Resolver do
   @moduledoc """
-    Cache and Periodically query the graph api
+    Periodically query ipfs and resolve content hash
   """
   use GenServer
   alias Fnd.{Nft, Repo, Ipfs}
