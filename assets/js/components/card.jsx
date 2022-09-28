@@ -12,7 +12,6 @@ export default function Card(props) {
     if (ext == "jpg" | ext == "png" | ext == "gif") {
         displayMedia = <img src={media} />
     } else {
-        console.log(media)
         displayMedia = <video width="250px" height="250px" controls><source src={media} type="video/ogg"></source></video>
     }
 
