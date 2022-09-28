@@ -6,7 +6,7 @@ View NFTs from the Foundation.app marketplace via The Graph.
 
 ## Architecture
 
-Fnd is phoenix server with a react.js frontend.
+Fnd is a phoenix server with a react.js frontend.
 
 The core operations are performed by two `GenServer`'s in `fnd/worker`, a cache which periodically fetches nft data from theGraph via the `Fnd.Graph` graphQL client and stores them in the database. A second worker resolver periodically queries the database if it has any new metadata and resolves its content hash via `Fnd.Ipfs` a small http client.
 
