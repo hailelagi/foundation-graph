@@ -43,10 +43,11 @@ defmodule Fnd.Worker.Resolver do
         |> Enum.take(20)
     end
 
+    schedule()
     {:noreply, :ok}
   end
 
-  defp schedule, do: Process.send_after(self(), :resolve, 20 * 1000)
+  defp schedule, do: Process.send_after(self(), :resolve, 50 * 1000)
 
   def unresolved do
     query =
